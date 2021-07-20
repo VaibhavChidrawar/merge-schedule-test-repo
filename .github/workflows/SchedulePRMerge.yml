@@ -1,0 +1,27 @@
+name: Scheduled PR Merge
+on:
+  pull_request:
+    types:
+      - opened
+      - edited
+      - synchronize
+      - labeled
+      - unlabeled
+
+  schedule:
+    # https://crontab.guru/#*/5_*_*_*_*  “At every 5th minute.”
+    - cron: '*/5 * * * *'
+
+jobs:
+  merge_schedule_job:
+    name: Scheduled PR Merge Main Job
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: VaibhavChidrawar/merge-schedule-test-repo@v1
+        with:
+          merge_method: merge
+          time_zone: "Asia/Tokyo"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
