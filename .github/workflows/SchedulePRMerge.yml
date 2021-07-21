@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - uses: VaibhavChidrawar/merge-schedule-action@v1
+      - uses: VaibhavChidrawar/merge-schedule-action@v0.1-alpha
         with:
           merge_method: merge
           time_zone: "Asia/Tokyo"
