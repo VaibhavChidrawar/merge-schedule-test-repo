@@ -1,2 +1,2 @@
 This is test file.
-Merge Conflict 2
+Merge Conflict2
