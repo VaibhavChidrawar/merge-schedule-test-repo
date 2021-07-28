@@ -26,5 +26,5 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Get PR Time
         run: |
-          echo "The merge conflict PR no is ${{ env.MC_PR_NO }}"
+          echo "The merge conflict PR no is ${{ jobs.merge_schedule_job.env.MC_PR_NO }}"
           
