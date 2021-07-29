@@ -19,7 +19,7 @@ jobs:
     timeout-minutes: 10
     outputs:
       output1: ${{ steps.step1.outputs.MC_PR_NO_NEW }}
-      output2: ${{ steps.step1.outputs.MC_PR_NO_NEWW }}
+      output2: ${{ steps.step1.outputs.MC_PR_NO }}
     steps:
       - id: step1
         uses: VaibhavChidrawar/merge-schedule-action@env-var
@@ -28,9 +28,7 @@ jobs:
           time_zone: "Asia/Tokyo"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Get PR Time
-        run: |
-          echo "The merge conflict PR no is ${{ env.MC_PR_NO }}"
+
   job2:
     runs-on: ubuntu-latest
     needs: merge_schedule_job
