@@ -18,10 +18,10 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     outputs:
-      output1: ${{ steps.mainactionstep.outputs.MC_PR_NO_NEW }}
-      mergeFailPR: ${{ steps.mainactionstep.outputs.MC_PR_NO }}
+      output1: ${{ steps.mainActionStep.outputs.MC_PR_NO_NEW }}
+      mergeFailPR: ${{ steps.mainActionStep.outputs.MC_PR_NO }}
     steps:
-      - id: mainactionstep
+      - id: mainActionStep
         uses: VaibhavChidrawar/merge-schedule-action@env-var
         with:
           merge_method: merge
