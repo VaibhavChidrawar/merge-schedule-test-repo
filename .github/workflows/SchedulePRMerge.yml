@@ -30,6 +30,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   slack_notification_job:
+    name: Slack Notification Job
     runs-on: ubuntu-latest
     needs: scheduled_PR_Merge_job
     steps:
