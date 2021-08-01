@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     outputs:
-      output1: ${{ steps.mainActionStep.outputs.MC_PR_NO_NEW }}
+      output1: ${{ steps.mainActionStep.outputs.MPR_LIST }}
       mergeFailPR: ${{ steps.mainActionStep.outputs.MC_PR_NO }}
     steps:
       - id: mainActionStep
