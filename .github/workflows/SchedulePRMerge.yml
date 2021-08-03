@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     outputs:
-      output1: ${{ steps.mainActionStep.outputs.MPR_LIST }}
+      mergedPRs: ${{ steps.mainActionStep.outputs.MPR_LIST }}
       mergeFailPR: ${{ steps.mainActionStep.outputs.MC_PR_NO }}
     steps:
       - id: mainActionStep
@@ -34,4 +34,4 @@ jobs:
     runs-on: ubuntu-latest
     needs: scheduled_PR_Merge_job
     steps:
-      - run: echo ${{needs.scheduled_PR_Merge_job.outputs.output1}} ${{needs.scheduled_PR_Merge_job.outputs.mergeFailPR}}
+      - run: echo ${{needs.scheduled_PR_Merge_job.outputs.mergedPRs}} ${{needs.scheduled_PR_Merge_job.outputs.mergeFailPR}}
