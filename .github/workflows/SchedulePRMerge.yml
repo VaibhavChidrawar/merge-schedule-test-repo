@@ -22,7 +22,7 @@ jobs:
       mergeFailPR: ${{ steps.mainActionStep.outputs.MC_PR_NO }}
     steps:
       - id: mainActionStep
-        uses: VaibhavChidrawar/merge-schedule-action@env-var
+        uses: VaibhavChidrawar/merge-schedule-action@master
         with:
           merge_method: merge
           time_zone: "Asia/Tokyo"
